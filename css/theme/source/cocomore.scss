@@ -1,0 +1,102 @@
+/**
+ * Cocomore theme for reveal.js.
+ *
+ * Author: Alejandro Leiva <alejandro.leiva@cocomore.com>
+ * Copyright (C) 2015 Cocomore AG.
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+// Include theme-specific fonts
+//@import url("//f.fontdeck.com/s/css/wMErktaKFxpwhaGE/Bm0r6zK5/www.cocomore.com/30722.css");
+
+@font-face {
+    font-family: 'Bliss Light';
+    src: url('http://f.fontdeck.com/f/1/UkhmRG5FaXUAB9N8bw8MBPOaW9O0pc534RKS2aQuNOtArXZQeGrf/POc7n8RSpCt+2FkjIvBpnctM7kTQ7ZYjeTqlPtjesM4BOFHwSuFBrn8PYW05k/ljOH429xQLlt+1pU.eot');
+    src: url('http://f.fontdeck.com/f/1/UkhmRG5FaXUAB9N8bw8MBPOaW9O0pc534RKS2aQuNOtArXZQeGrf/POc7n8RSpCt+2FkjIvBpnctM7kTQ7ZYjeTqlPtjesM4BOFHwSuFBrn8PYW05k/ljOH429xQLlt+1pU.eot?') format('embedded-opentype'),
+    url('http://f.fontdeck.com/f/1/UkhmRG5FaXUAB9N8bw8MBPOaW9O0pc534RKS2aQuNOtArXZQeGrf/POc7n8RSpCt+2FkjIvBpnctM7kTQ7ZYjeTqlPtjesM4BOFHwSuFBrn8PYW05k/ljOH429xQLlt+1pU.woff') format('woff'),
+    url('http://f.fontdeck.com/f/1/UkhmRG5FaXUAB9N8bw8MBPOaW9O0pc534RKS2aQuNOtArXZQeGrf/POc7n8RSpCt+2FkjIvBpnctM7kTQ7ZYjeTqlPtjesM4BOFHwSuFBrn8PYW05k/ljOH429xQLlt+1pU.ttf') format('opentype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bliss Regular';
+    src: url('http://f.fontdeck.com/f/1/X2xobHVtREIAB52Uznx1QOzyN7Ny8bZA4p/cVS+AtAyGhcJb3TdQlCHEiQg73LbZSQplGVlyXXB9DoviKd4ifoi2JwzqRooggDYyGEPGVURnpYlmlzSucc3Y8luhN3rXzKc.eot');
+    src: url('http://f.fontdeck.com/f/1/X2xobHVtREIAB52Uznx1QOzyN7Ny8bZA4p/cVS+AtAyGhcJb3TdQlCHEiQg73LbZSQplGVlyXXB9DoviKd4ifoi2JwzqRooggDYyGEPGVURnpYlmlzSucc3Y8luhN3rXzKc.eot?') format('embedded-opentype'),
+    url('http://f.fontdeck.com/f/1/X2xobHVtREIAB52Uznx1QOzyN7Ny8bZA4p/cVS+AtAyGhcJb3TdQlCHEiQg73LbZSQplGVlyXXB9DoviKd4ifoi2JwzqRooggDYyGEPGVURnpYlmlzSucc3Y8luhN3rXzKc.woff') format('woff'),
+    url('http://f.fontdeck.com/f/1/X2xobHVtREIAB52Uznx1QOzyN7Ny8bZA4p/cVS+AtAyGhcJb3TdQlCHEiQg73LbZSQplGVlyXXB9DoviKd4ifoi2JwzqRooggDYyGEPGVURnpYlmlzSucc3Y8luhN3rXzKc.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html * {
+    -webkit-tap-highlight-color: transparent;
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+#cocomore {
+    position: absolute;
+    display: block;
+    top: 20px;
+    left: 20px;
+    z-index: 100;
+}
+
+#cocomore img {
+    height: 40px;
+}
+
+.reveal .pause-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba( 255, 255, 255, 1 );
+    background-image: url("http://www.cocomore.com/sites/all/themes/coco_html5/images/logo-dpi-72.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all 1s ease;
+}
+
+// Override theme settings (see ../template/settings.scss)
+$backgroundColor: #fff;
+
+$mainColor: #575A5D;
+$headingColor: #575A5D;
+
+$mainFontSize: 38px;
+$mainFont: 'Bliss Light', 'Gill Sans', 'Calibri', 'Helvetica Neue', sans-serif;
+$headingFont: 'Bliss Light', 'Gill Sans', 'Calibri', 'Helvetica Neue', sans-serif;
+$headingTextShadow: none;
+$headingLetterSpacing: normal;
+$headingTextTransform: uppercase;
+$headingFontWeight: 600;
+$linkColor: #2a76dd;
+$linkColorHover: lighten( $linkColor, 15% );
+$selectionBackgroundColor: lighten( $linkColor, 25% );
+
+$heading1Size: 2.5em;
+$heading2Size: 1.6em;
+$heading3Size: 1.3em;
+$heading4Size: 1.0em;
+
+section.has-dark-background {
+	&, h1, h2, h3, h4, h5, h6 {
+		color: #fff;
+	}
+}
+
+// Background generator
+@mixin bodyBackground() {
+    @include vertical-gradient(rgba(250,240,230,1), rgba(243,243,243,1));
+}
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
